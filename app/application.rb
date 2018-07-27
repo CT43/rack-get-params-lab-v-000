@@ -15,6 +15,7 @@ class Application
         @@cart.each do |cart|
           resp.write "#{cart}\n"
       end
+    end
     elsif req.path.match(/items/)
       @@items.each do |item|
         resp.write "#{item}\n"
