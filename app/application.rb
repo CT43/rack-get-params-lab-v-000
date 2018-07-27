@@ -18,7 +18,7 @@ class Application
       end
     elsif req.path.match(/add/)
       @@cart << @@items[0]
-      resp.write "added #{@@items[0]}"
+        resp.write "added #{@@items[0]}"
     elsif req.path.match(/items/)
       @@items.each do |item|
         resp.write "#{item}\n"
