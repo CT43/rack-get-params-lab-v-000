@@ -22,6 +22,7 @@ class Application
         resp.write "added #{@@items[0]}"
         else
           "We don't have that item"
+        end
     elsif req.path.match(/items/)
       @@items.each do |item|
         resp.write "#{item}\n"
