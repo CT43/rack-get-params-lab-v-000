@@ -6,6 +6,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
+    if req.path.match(/cart/)
     if req.path.match(/items/)
       @@items.each do |item|
         resp.write "#{item}\n"
@@ -13,7 +14,6 @@ class Application
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
-    elsif req.path.match(/cart/)
     else
       resp.write "Path Not Found"
     end
