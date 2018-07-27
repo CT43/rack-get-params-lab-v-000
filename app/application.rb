@@ -21,7 +21,7 @@ class Application
         if @@cart.include?(@@items[0])
         resp.write "added #{@@items[0]}"
         else
-          "We don't have that item"
+          resp.write "We don't have that item"
         end
     elsif req.path.match(/items/)
       @@items.each do |item|
