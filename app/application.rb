@@ -16,7 +16,7 @@ class Application
           resp.write "#{cart}\n"
         end
       end
-    elsif req.path.match(/add/) 
+    elsif req.path.match(/add/)
       @@cart << @@items[0]
     elsif req.path.match(/items/)
       @@items.each do |item|
