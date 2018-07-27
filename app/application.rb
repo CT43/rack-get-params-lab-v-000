@@ -9,6 +9,8 @@ class Application
     if req.path.match(/cart/)
       if @@items.size == 0
         resp.write "Your cart is empty"
+      end 
+    end 
     if req.path.match(/items/)
       @@items.each do |item|
         resp.write "#{item}\n"
