@@ -17,12 +17,13 @@ class Application
         end
       end
     elsif req.path.match(/add/)
-      @@cart << @@items[0]
-        if @@cart.include?("#{@@items[0]}")
-          resp.write "added #{@@items[0]}"
-        else
-          resp.write "We don't have that item"
-        end
+      item_to_add = req.params["item"]
+      if @@items.include? item_to_add 
+        @@cart << item_to_add
+        resp.write "added #{item_to_add}"
+      else
+        resp.write "We don't have that item!"
+      end
     elsif req.path.match(/items/)
       @@items.each do |item|
         resp.write "#{item}\n"
