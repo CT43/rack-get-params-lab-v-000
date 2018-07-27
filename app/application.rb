@@ -20,6 +20,8 @@ class Application
       @@cart << @@items[0]
         if @@cart.include?(@@item[0])
         resp.write "added #{@@items[0]}"
+        else
+          "We don't have that item"
     elsif req.path.match(/items/)
       @@items.each do |item|
         resp.write "#{item}\n"
